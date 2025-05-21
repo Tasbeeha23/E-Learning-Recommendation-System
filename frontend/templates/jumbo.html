@@ -1,0 +1,45 @@
+<div class="container">
+
+    <h1>Welcome{% if current_user.username %} {{current_user.name}}{% endif %}!</h1>
+
+    {% if signup %}
+      <p>Sign up for a MOOC recommendation account here</p>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('index') }}" role="button">Home</a>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('signup') }}" role="button">Register</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('login') }}" role="button">Log in</a>
+    {% elif login %}
+      <p>Log in to your MOOC recommendation account here</p>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('index') }}" role="button">Home</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('signup') }}" role="button">Register</a>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('login') }}" role="button">Log in</a>
+    {% elif index %}
+      <p>This is the MOOC recommendation system. Login or register to get your personalized course recommendation :)</p>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('index') }}" role="button">Home</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('signup') }}" role="button">Register</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('login') }}" role="button">Log in</a>
+    {% elif home %}
+      <a class="btn btn-primary btn-lg" href = "{{ url_for('home') }}" role="button">Home</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('query') }}" role="button">Get Personalized Recommendation</a>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('favourites') }}" role="button">My Favourites</a>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('history') }}" role="button">History</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('logout') }}">Logout</a>
+    {% elif query %}
+      <a class="btn btn-default btn-lg" href = "{{ url_for('home') }}" role="button">Home</a>
+      <a class="btn btn-primary btn-lg" href="{{ url_for('query') }}" role="button">Get Personalized Recommendation</a>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('favourites') }}" role="button">My Favourites</a>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('history') }}" role="button">History</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('logout') }}">Logout</a>
+    {% elif favourites %}
+      <a class="btn btn-default btn-lg" href = "{{ url_for('home') }}" role="button">Home</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('query') }}" role="button">Get Personalized Recommendation</a>
+      <a class="btn btn-primary btn-lg" href = "{{ url_for('favourites') }}" role="button">My Favourites</a>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('history') }}" role="button">History</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('logout') }}">Logout</a>
+    {% elif history %}
+      <a class="btn btn-default btn-lg" href = "{{ url_for('home') }}" role="button">Home</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('query') }}" role="button">Get Personalized Recommendation</a>
+      <a class="btn btn-default btn-lg" href = "{{ url_for('favourites') }}" role="button">My Favourites</a>
+      <a class="btn btn-primary btn-lg" href = "{{ url_for('history') }}" role="button">History</a>
+      <a class="btn btn-default btn-lg" href="{{ url_for('logout') }}">Logout</a>
+    {% endif %}
+</div>

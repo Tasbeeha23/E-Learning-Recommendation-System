@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+    <div class="jumbotron" style="background-color:#c8d8e4">
+    {% include 'jumbo.html' %}
+    </div>
+{% endblock %}
+
+{% block app_content %}
+<h2>Sign up</h2>
+<br>
+<div class="container" style="background-color:white">
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            {% import 'bootstrap/wtf.html' as wtf %}
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+    <div>
+        <br>
+    <a href="{{ url_for('login') }}">Already have an account? Log in here</a>
+    </div>
+    <br>
+</div>
+{% endblock %}
