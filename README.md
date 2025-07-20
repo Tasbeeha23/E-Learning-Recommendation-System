@@ -1,0 +1,1 @@
+An intelligent recommendation system built with Flask and machine learning models to personalize educational content based on learner behavior and performance. It uses classification, clustering, regression, and reinforcement learning techniques to deliver tailored learning experiences.
